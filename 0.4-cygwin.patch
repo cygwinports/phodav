@@ -1,0 +1,24 @@
+--- origsrc/phodav-0.4/configure.ac	2014-04-06 08:08:14.000000000 -0500
++++ src/phodav-0.4/configure.ac	2015-01-09 11:11:34.264665100 -0600
+@@ -15,7 +15,7 @@ AS_IF([test "x$STOW" = "xyes" && test -d
+ 
+ AC_MSG_CHECKING([for native Win32])
+ case "$host_os" in
+-  *mingw*|*cygwin*)
++  *mingw*)
+     os_win32=yes
+     gio_os=gio-windows-2.0
+   ;;
+--- origsrc/phodav-0.4/spice/spice-webdavd.c	2014-02-26 09:41:31.000000000 -0600
++++ src/phodav-0.4/spice/spice-webdavd.c	2015-01-09 11:10:28.803352500 -0600
+@@ -783,7 +783,9 @@ main (int argc, char *argv[])
+                                    NULL, (GDestroyNotify) client_free);
+ 
+   loop = g_main_loop_new (NULL, TRUE);
+-#ifdef G_OS_UNIX
++#ifdef G_OS_CYGWIN
++  open_mux_path ("/proc/sys/BaseNamedObjects/Global/org.spice-space.webdav.0");
++#elif defined(G_OS_UNIX)
+   open_mux_path ("/dev/virtio-ports/org.spice-space.webdav.0");
+ #else
+   open_mux_path ("\\\\.\\Global\\org.spice-space.webdav.0");

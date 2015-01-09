@@ -1,0 +1,20 @@
+inherit gnome2
+
+NAME="phodav"
+VERSION=0.4
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="WebDAV server implementation using libsoup"
+DESCRIPTION=
+HOMEPAGE="https://wiki.gnome.org/phodav"
+
+PKG_NAMES="libphodav1.0_0 libphodav1.0-devel libphodav1.0-doc chezdav"
+libphodav1_0_0_CONTENTS="usr/bin/cygphodav-1.0-0.dll usr/share/doc/ usr/share/locale/"
+libphodav1_0_devel_CONTENTS="usr/include/libphodav-1.0/
+	usr/lib/libphodav-1.0.dll.a usr/lib/pkgconfig/libphodav-1.0.pc"
+libphodav1_0_doc_CATEGORY="Doc"
+libphodav1_0_doc_CONTENTS="usr/share/gtk-doc/html/phodav/"
+chezdav_CATEGORY="Net"
+chezdav_CONTENTS="usr/bin/chezdav.exe usr/share/man/man1/chezdav.1.gz"
+
+MAKEOPTS+=" dist_systemdunit_DATA=  dist_udevrules_DATA=  sbin_PROGRAMS= "
