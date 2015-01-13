@@ -8,6 +8,8 @@ SUMMARY="WebDAV server implementation using libsoup"
 DESCRIPTION=
 HOMEPAGE="https://wiki.gnome.org/phodav"
 
+PATCH_URI="0.4-cygwin.patch"
+
 PKG_NAMES="libphodav1.0_0 libphodav1.0-devel libphodav1.0-doc chezdav"
 libphodav1_0_0_CONTENTS="usr/bin/cygphodav-1.0-0.dll usr/share/doc/ usr/share/locale/"
 libphodav1_0_devel_CONTENTS="usr/include/libphodav-1.0/
