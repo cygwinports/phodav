@@ -1,11 +1,13 @@
 inherit gnome2
 
 NAME="phodav"
-VERSION=2.0
+VERSION=2.1
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="WebDAV server implementation using libsoup"
-DESCRIPTION=
+DESCRIPTION="phodav was initially developed as a WebDav filesharing mechanism
+for Spice, but it is generic enough to be reused in other projects, in
+particular in the GNOME desktop."
 HOMEPAGE="https://wiki.gnome.org/phodav"
 
 PATCH_URI="0.4-cygwin.patch"
@@ -15,8 +17,7 @@ libphodav2_0_0_CONTENTS="usr/bin/cygphodav-2.0-0.dll usr/share/doc/ usr/share/lo
 libphodav2_0_devel_CONTENTS="usr/include/libphodav-2.0/
 	usr/lib/libphodav-2.0.dll.a usr/lib/pkgconfig/libphodav-2.0.pc"
 libphodav2_0_doc_CATEGORY="Doc"
-libphodav2_0_doc_OBSOLETES="libphodav1.0-doc"
-libphodav2_0_doc_CONTENTS="usr/share/gtk-doc/html/phodav/"
+libphodav2_0_doc_CONTENTS="usr/share/gtk-doc/html/phodav-2.0/"
 chezdav_CATEGORY="Net"
 chezdav_CONTENTS="usr/bin/chezdav.exe usr/share/man/man1/chezdav.1.gz"
 
